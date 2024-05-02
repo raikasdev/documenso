@@ -18,9 +18,21 @@ import { ThemeSwitcher } from '@documenso/ui/primitives/theme-switcher';
 export type FooterProps = HTMLAttributes<HTMLDivElement>;
 
 const SOCIAL_LINKS = [
-  { href: 'https://twitter.com/documenso', icon: <FaXTwitter className="h-6 w-6" /> },
-  { href: 'https://github.com/documenso/documenso', icon: <LuGithub className="h-6 w-6" /> },
-  { href: 'https://documen.so/discord', icon: <LiaDiscord className="h-7 w-7" /> },
+  {
+    href: 'https://twitter.com/documenso',
+    service: 'X (previously Twitter)',
+    icon: <FaXTwitter className="h-6 w-6" />,
+  },
+  {
+    href: 'https://github.com/documenso/documenso',
+    service: 'Github',
+    icon: <LuGithub className="h-6 w-6" />,
+  },
+  {
+    href: 'https://documen.so/discord',
+    service: 'Discord',
+    icon: <LiaDiscord className="h-7 w-7" />,
+  },
 ];
 
 const FOOTER_LINKS = [
@@ -59,6 +71,7 @@ export const Footer = ({ className, ...props }: FooterProps) => {
                 href={link.href}
                 target="_blank"
                 className="text-muted-foreground hover:text-muted-foreground/80"
+                aria-label={link.service}
               >
                 {link.icon}
               </Link>
@@ -70,7 +83,7 @@ export const Footer = ({ className, ...props }: FooterProps) => {
           </div> */}
         </div>
 
-        <div className="grid w-full max-w-sm grid-cols-2 gap-x-4 gap-y-2 md:w-auto md:gap-x-8">
+        <div className="grid w-full max-w-sm grid-cols-2 gap-x-4 gap-y-3 md:w-auto md:gap-x-8">
           {FOOTER_LINKS.map((link, index) => (
             <Link
               key={index}
