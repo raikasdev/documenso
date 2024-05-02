@@ -15,6 +15,7 @@ export const ThemeSwitcher = () => {
       <button
         className="text-muted-foreground relative z-10 flex h-8 w-8 items-center justify-center rounded-full"
         onClick={() => setTheme(THEMES_TYPE.LIGHT)}
+        aria-label="Set color scheme to light mode"
       >
         {isMounted && theme === THEMES_TYPE.LIGHT && (
           <motion.div
@@ -28,6 +29,7 @@ export const ThemeSwitcher = () => {
       <button
         className="text-muted-foreground relative z-10 flex h-8 w-8 items-center justify-center rounded-full"
         onClick={() => setTheme(THEMES_TYPE.DARK)}
+        aria-label="Set color scheme to dark mode"
       >
         {isMounted && theme === THEMES_TYPE.DARK && (
           <motion.div
@@ -42,6 +44,7 @@ export const ThemeSwitcher = () => {
       <button
         className="text-muted-foreground relative z-10 flex h-8 w-8 items-center justify-center rounded-full"
         onClick={() => setTheme(THEMES_TYPE.SYSTEM)}
+        aria-label="Set color scheme to system preference"
       >
         {isMounted && theme === THEMES_TYPE.SYSTEM && (
           <motion.div
